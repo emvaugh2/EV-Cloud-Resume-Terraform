@@ -1,0 +1,59 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.git/
+
+.terraform/
+*.tfstate
+*.tfstate.*
+*.pem
+**/.terraform/*
+*/.terraform/*
+**/.terraform/**
+
+crash.og
+crash.*.log
+
+*.tfplan
+tfplan
+plan.txt
+
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+!*.tfvars.example
+
+
+
+Edward V <edwardvaughnv@gmail.com>
+5:01 PM (0 minutes ago)
+to me
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+# Azure Functions
+local.settings.json
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+# VS Code
+.vscode/
+# Logs
+*.log
+# OS
+.DS_Store
+Thumbs.db
+
+.terraform/
+*.tfstate.
+*.tfstate.*
+crash.log

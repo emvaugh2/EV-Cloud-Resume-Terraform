@@ -1,0 +1,70 @@
+[0m[1mazurerm_resource_group.crc_rg: Refreshing state... [id=/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod][0m
+[0m[1mazurerm_cdn_frontdoor_profile.crc_frontdoor: Refreshing state... [id=/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod/providers/Microsoft.Cdn/profiles/afd-ev-crc-prod][0m
+[0m[1mazurerm_storage_account.crc_storage: Refreshing state... [id=/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod/providers/Microsoft.Storage/storageAccounts/evcrcstorageaccount2026][0m
+[0m[1mazurerm_cdn_frontdoor_endpoint.crc_afd_endpoint: Refreshing state... [id=/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod/providers/Microsoft.Cdn/profiles/afd-ev-crc-prod/afdEndpoints/ev-crc][0m
+[0m[1mazurerm_cdn_frontdoor_origin_group.crc_afd_og: Refreshing state... [id=/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod/providers/Microsoft.Cdn/profiles/afd-ev-crc-prod/originGroups/default-origin-group][0m
+[0m[1mazurerm_cdn_frontdoor_origin.crc_afd_origin: Refreshing state... [id=/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod/providers/Microsoft.Cdn/profiles/afd-ev-crc-prod/originGroups/default-origin-group/origins/default-origin][0m
+[0m[1mazurerm_storage_account_static_website.crc_website: Refreshing state... [id=/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod/providers/Microsoft.Storage/storageAccounts/evcrcstorageaccount2026][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place[0m
+
+Terraform will perform the following actions:
+
+[1m  # azurerm_cdn_frontdoor_origin.crc_afd_origin[0m will be updated in-place
+[0m  [33m~[0m[0m resource "azurerm_cdn_frontdoor_origin" "crc_afd_origin" {
+      [33m~[0m[0m host_name                      = "evcrcstorageaccount2026.z19.web.core.windows.net" [33m->[0m[0m "evcrcstorageaccount2026.blob.core.windows.net"
+        id                             = "/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod/providers/Microsoft.Cdn/profiles/afd-ev-crc-prod/originGroups/default-origin-group/origins/default-origin"
+        name                           = "default-origin"
+      [33m~[0m[0m origin_host_header             = "evcrcstorageaccount2026.z19.web.core.windows.net" [33m->[0m[0m "evcrcstorageaccount2026.blob.core.windows.net"
+        [90m# (7 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # azurerm_cdn_frontdoor_origin_group.crc_afd_og[0m will be updated in-place
+[0m  [33m~[0m[0m resource "azurerm_cdn_frontdoor_origin_group" "crc_afd_og" {
+        id                                                        = "/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod/providers/Microsoft.Cdn/profiles/afd-ev-crc-prod/originGroups/default-origin-group"
+        name                                                      = "default-origin-group"
+      [33m~[0m[0m restore_traffic_time_to_healed_or_new_endpoint_in_minutes = 0 [33m->[0m[0m 10
+      [33m~[0m[0m session_affinity_enabled                                  = false [33m->[0m[0m true
+        [90m# (1 unchanged attribute hidden)[0m[0m
+
+        [90m# (2 unchanged blocks hidden)[0m[0m
+    }
+
+[1m  # azurerm_cdn_frontdoor_profile.crc_frontdoor[0m will be updated in-place
+[0m  [33m~[0m[0m resource "azurerm_cdn_frontdoor_profile" "crc_frontdoor" {
+        id                       = "/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod/providers/Microsoft.Cdn/profiles/afd-ev-crc-prod"
+        name                     = "afd-ev-crc-prod"
+      [33m~[0m[0m response_timeout_seconds = 60 [33m->[0m[0m 120
+      [33m~[0m[0m tags                     = {
+          [32m+[0m[0m "Environment" = "Production"
+          [32m+[0m[0m "ManagedBy"   = "Terraform"
+          [32m+[0m[0m "Owner"       = "EV"
+          [32m+[0m[0m "Project"     = "Cloud-Resume-Challenge"
+        }
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # azurerm_storage_account.crc_storage[0m will be updated in-place
+[0m  [33m~[0m[0m resource "azurerm_storage_account" "crc_storage" {
+      [33m~[0m[0m default_to_oauth_authentication    = true [33m->[0m[0m false
+        id                                 = "/subscriptions/38052b7f-fb19-438e-98bc-ed4da58a83c1/resourceGroups/rg-ev-crc-prod/providers/Microsoft.Storage/storageAccounts/evcrcstorageaccount2026"
+        name                               = "evcrcstorageaccount2026"
+      [33m~[0m[0m tags                               = {
+          [32m+[0m[0m "Environment" = "Production"
+          [32m+[0m[0m "ManagedBy"   = "Terraform"
+          [32m+[0m[0m "Owner"       = "EV"
+          [32m+[0m[0m "Project"     = "Cloud-Resume-Challenge"
+        }
+        [90m# (96 unchanged attributes hidden)[0m[0m
+
+        [90m# (4 unchanged blocks hidden)[0m[0m
+    }
+
+[1mPlan:[0m [0m0 to add, 4 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
